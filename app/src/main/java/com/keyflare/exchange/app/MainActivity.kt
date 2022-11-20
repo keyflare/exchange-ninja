@@ -1,9 +1,9 @@
-package com.keyflare.exchange
+package com.keyflare.exchange.app
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import com.keyflare.exchange.ui.theme.ExchangeTheme
+import com.keyflare.exchange.designSystem.theme.ExchangeTheme
 
 class MainActivity : ComponentActivity() {
 
@@ -11,7 +11,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             ExchangeTheme {
-
+                
             }
         }
     }

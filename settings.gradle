@@ -16,3 +16,4 @@ rootProject.name = "exchange"
 include ':app'
 include ':currency-rates'
 include ':entities'
+include ':design-system'

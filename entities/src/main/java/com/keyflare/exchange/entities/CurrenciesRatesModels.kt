@@ -1,4 +1,4 @@
-package com.keyflare.exchnage.entities
+package com.keyflare.exchange.entities
 
 data class CurrencyRatesData(
     val currency: Currency,

@@ -5,6 +5,7 @@ pluginManagement {
         mavenCentral()
     }
 }
+
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
@@ -12,8 +13,10 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
+
 rootProject.name = "exchange"
-include ':app'
-include ':currency-rates'
-include ':entities'
-include ':design-system'
+
+include(":app")
+include(":currency-rates")
+include(":entities")
+include(":design-system")

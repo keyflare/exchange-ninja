@@ -1,6 +1,7 @@
-package com.keyflare.exchnage.entities
+package com.keyflare.exchange.entities
 
-import com.keyflare.exchnage.entities.CurrencyType.*
+import com.keyflare.exchange.entities.CurrencyType.CRYPTO
+import com.keyflare.exchange.entities.CurrencyType.FIAT
 
 enum class CurrencyType { FIAT, CRYPTO }
 

@@ -1,6 +1,6 @@
 package com.keyflare.currencyRates.internal.sources.fawazahmed0
 
-import com.keyflare.exchnage.entities.Currency
+import com.keyflare.exchange.entities.Currency
 
 internal val fawazahmed0CurrencyMap = mapOf(
     "1inch" to Currency.ONEINCH,

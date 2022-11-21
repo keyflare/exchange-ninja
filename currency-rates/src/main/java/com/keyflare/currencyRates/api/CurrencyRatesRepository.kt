@@ -1,9 +1,9 @@
 package com.keyflare.currencyRates.api
 
 import com.keyflare.currencyRates.internal.di.CurrencyRatesDiComponent
-import com.keyflare.exchnage.entities.CurrenciesPairData
-import com.keyflare.exchnage.entities.Currency
-import com.keyflare.exchnage.entities.CurrencyRatesData
+import com.keyflare.exchange.entities.CurrenciesPairData
+import com.keyflare.exchange.entities.Currency
+import com.keyflare.exchange.entities.CurrencyRatesData
 import kotlinx.coroutines.flow.Flow
 
 interface CurrencyRatesRepository {

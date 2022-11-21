@@ -1,7 +1,7 @@
 package com.keyflare.currencyRates.internal.sources.fawazahmed0
 
-import com.keyflare.exchnage.entities.Currency
-import com.keyflare.exchnage.entities.CurrencyRatesData
+import com.keyflare.exchange.entities.Currency
+import com.keyflare.exchange.entities.CurrencyRatesData
 import kotlinx.serialization.json.jsonObject
 
 internal fun Fawazahmed0AllRatesResponse.toModel(): List<CurrencyRatesData> {

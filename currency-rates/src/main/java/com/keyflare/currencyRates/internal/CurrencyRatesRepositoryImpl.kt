@@ -3,9 +3,9 @@ package com.keyflare.currencyRates.internal
 import com.keyflare.currencyRates.api.CurrencyRatesRepository
 import com.keyflare.currencyRates.internal.sources.fawazahmed0.Fawazahmed0Source
 import com.keyflare.currencyRates.internal.sources.fawazahmed0.toModel
-import com.keyflare.exchnage.entities.CurrenciesPairData
-import com.keyflare.exchnage.entities.Currency
-import com.keyflare.exchnage.entities.CurrencyRatesData
+import com.keyflare.exchange.entities.CurrenciesPairData
+import com.keyflare.exchange.entities.Currency
+import com.keyflare.exchange.entities.CurrencyRatesData
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 

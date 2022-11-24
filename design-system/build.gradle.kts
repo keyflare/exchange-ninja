@@ -49,4 +49,6 @@ dependencies {
     implementation("androidx.compose.material:material:$composeUiVersion")
     debugImplementation("androidx.compose.ui:ui-tooling:$composeUiVersion")
     debugImplementation("androidx.compose.ui:ui-test-manifest:$composeUiVersion")
+
+    implementation(project(":entities"))
 }

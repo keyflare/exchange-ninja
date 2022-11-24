@@ -53,7 +53,6 @@ enum class Currency(
     BUSD(ticker = "BUSD", displayName = "Binance USD", type = CRYPTO),
     BWP(ticker = "BWP", displayName = "Botswanan Pula", type = FIAT),
     BYN(ticker = "BYN", displayName = "Belarusian Ruble", type = FIAT),
-    BYR(ticker = "BYR", displayName = "Old Belarusian Ruble", type = FIAT), // TODO BLACKLIST
     BZD(ticker = "BZD", displayName = "Belize dollar", type = FIAT),
     CAD(ticker = "CAD", displayName = "Canadian dollar", type = FIAT),
     CAKE(ticker = "CAKE", displayName = "PancakeSwap", type = CRYPTO),
@@ -69,7 +68,7 @@ enum class Currency(
     CRC(ticker = "CRC", displayName = "Costa Rican Colón", type = FIAT),
     CRO(ticker = "CRO", displayName = "Crypto.com Chain Token", type = CRYPTO),
     CRV(ticker = "CRV", displayName = "Curve DAO Token", type = CRYPTO),
-    CUC(ticker = "CUC", displayName = "Cuban peso", type = FIAT),
+    CUC(ticker = "CUC", displayName = "Cuban Convertible Peso", type = FIAT),
     CUP(ticker = "CUP", displayName = "Cuban Peso", type = FIAT),
     CVE(ticker = "CVE", displayName = "Cape Verdean escudo", type = FIAT),
     CVX(ticker = "CVX", displayName = "Convex Finance", type = CRYPTO),
@@ -126,7 +125,6 @@ enum class Currency(
     ICP(ticker = "ICP", displayName = "Internet Computer", type = CRYPTO),
     IDR(ticker = "IDR", displayName = "Indonesian rupiah", type = FIAT),
     ILS(ticker = "ILS", displayName = "Israeli New Shekel", type = FIAT),
-    IMP(ticker = "IMP", displayName = "CoinIMP", type = CRYPTO),
     INJ(ticker = "INJ", displayName = "Injective", type = CRYPTO),
     INR(ticker = "INR", displayName = "Indian rupee", type = FIAT),
     IQD(ticker = "IQD", displayName = "Iraqi dinar", type = FIAT),
@@ -153,7 +151,6 @@ enum class Currency(
     KZT(ticker = "KZT", displayName = "Kazakhstani tenge", type = FIAT),
     LAK(ticker = "LAK", displayName = "Laotian Kip", type = FIAT),
     LBP(ticker = "LBP", displayName = "Lebanese pound", type = FIAT),
-    LEO(ticker = "LEO", displayName = "LEOcoin", type = CRYPTO), // TODO BLACKLIST
     LINK(ticker = "LINK", displayName = "ChainLink", type = CRYPTO),
     LKR(ticker = "LKR", displayName = "Sri Lankan rupee", type = FIAT),
     LRC(ticker = "LRC", displayName = "Loopring", type = CRYPTO),
@@ -192,12 +189,10 @@ enum class Currency(
     NOK(ticker = "NOK", displayName = "Norwegian krone", type = FIAT),
     NPR(ticker = "NPR", displayName = "Nepalese rupee", type = FIAT),
     NZD(ticker = "NZD", displayName = "New Zealand dollar", type = FIAT),
-    OKB(ticker = "OKB", displayName = "Okex", type = CRYPTO), //TODO BLACKLIST
     OMR(ticker = "OMR", displayName = "Omani rial", type = FIAT),
     ONE(ticker = "ONE", displayName = "Menlo One", type = CRYPTO),
     PAB(ticker = "PAB", displayName = "Panamanian balboa", type = FIAT),
     PAXG(ticker = "PAXG", displayName = "PAX Gold", type = CRYPTO),
-    PEN(ticker = "PEN", displayName = "Sol", type = CRYPTO), // TODO BLACKLIST
     PGK(ticker = "PGK", displayName = "Papua New Guinean kina", type = FIAT),
     PHP(ticker = "PHP", displayName = "Philippine peso", type = FIAT),
     PKR(ticker = "PKR", displayName = "Pakistani rupee", type = FIAT),
@@ -225,7 +220,6 @@ enum class Currency(
     SOL(ticker = "SOL", displayName = "Solana", type = CRYPTO),
     SOS(ticker = "SOS", displayName = "Somali shilling", type = FIAT),
     SRD(ticker = "SRD", displayName = "Surinamese dollar", type = FIAT),
-    STD(ticker = "STD", displayName = "Sao Tomean Dobra", type = FIAT), // TODO BLACKLIST
     STX(ticker = "STX", displayName = "Stox", type = CRYPTO),
     SVC(ticker = "SVC", displayName = "Salvadoran Colón", type = FIAT),
     SYP(ticker = "SYP", displayName = "Syrian pound", type = FIAT),
@@ -261,12 +255,9 @@ enum class Currency(
     WEMIX(ticker = "WEMIX", displayName = "WEMIX", type = CRYPTO),
     WST(ticker = "WST", displayName = "Samoan tala", type = FIAT),
     XAF(ticker = "XAF", displayName = "Central African CFA franc", type = FIAT),
-    XAG(ticker = "XAG", displayName = "Silver Ounce", type = CRYPTO),
-    XAU(ticker = "XAU", displayName = "XauCoin", type = CRYPTO),
     XCD(ticker = "XCD", displayName = "East Caribbean dollar", type = FIAT),
     XCH(ticker = "XCH", displayName = "Chia", type = CRYPTO),
     XDC(ticker = "XDC", displayName = "XDC Network", type = CRYPTO),
-    XDR(ticker = "XDR", displayName = "Special Drawing Rights", type = CRYPTO), // TODO BLACKLIST
     XEC(ticker = "XEC", displayName = "Eternal Coin", type = CRYPTO),
     XEM(ticker = "XEM", displayName = "NEM", type = CRYPTO),
     XLM(ticker = "XLM", displayName = "Stellar", type = CRYPTO),
@@ -281,5 +272,16 @@ enum class Currency(
     ZIL(ticker = "ZIL", displayName = "Zilliqa", type = CRYPTO),
     ZMK(ticker = "ZMK", displayName = "Zambian kwacha", type = FIAT),
     ZMW(ticker = "ZMW", displayName = "Zambian Kwacha", type = FIAT),
-    ZWL(ticker = "ZWL", displayName = "Zimbabwean Dollar", type = FIAT)
+    ZWL(ticker = "ZWL", displayName = "Zimbabwean Dollar", type = FIAT),
+
+    // Blacklist
+//    XDR(ticker = "XDR", displayName = "Special Drawing Rights", type = CRYPTO),
+//    XAG(ticker = "XAG", displayName = "Silver Ounce", type = CRYPTO),
+//    XAU(ticker = "XAU", displayName = "XauCoin", type = CRYPTO),
+//    STD(ticker = "STD", displayName = "Sao Tomean Dobra", type = FIAT),
+//    PEN(ticker = "PEN", displayName = "Sol", type = CRYPTO),
+//    OKB(ticker = "OKB", displayName = "Okex", type = CRYPTO),
+//    LEO(ticker = "LEO", displayName = "LEOcoin", type = CRYPTO),
+//    IMP(ticker = "IMP", displayName = "CoinIMP", type = CRYPTO),
+//    BYR(ticker = "BYR", displayName = "Old Belarusian Ruble", type = FIAT),
 }

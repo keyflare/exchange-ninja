@@ -1,22 +1,17 @@
 plugins {
-    id("com.android.application")
-    kotlin("android")
+    id("com.android.library")
+    id("org.jetbrains.kotlin.android")
 }
 
 android {
-    namespace = "com.keyflare.exchange"
+    namespace = "com.keyflare.exchange.currencyChooser"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.keyflare.exchange"
         minSdk = 26
         targetSdk = 33
-        versionCode = 1
-        versionName = "1.0"
 
-        vectorDrawables {
-            useSupportLibrary = true
-        }
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -24,7 +19,7 @@ android {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro",
+                "proguard-rules.pro"
             )
         }
     }
@@ -41,18 +36,13 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = "1.3.1"
     }
-    packagingOptions {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
-    }
 }
 
-// TODO use version catalog
 dependencies {
+
     implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.5.1")
-    implementation("androidx.activity:activity-compose:1.6.1")
+    implementation("androidx.appcompat:appcompat:1.5.1")
+    implementation("com.google.android.material:material:1.7.0")
 
     val composeUiVersion = "1.3.1"
     implementation("androidx.compose.ui:ui:$composeUiVersion")
@@ -63,7 +53,6 @@ dependencies {
 
     implementation("com.jakewharton.timber:timber:5.0.1")
 
+    implementation(project(":entities"))
     implementation(project(":design-system"))
-    implementation(project(":currency-rates"))
-    implementation(project(":currency-chooser"))
 }

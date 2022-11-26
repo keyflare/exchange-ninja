@@ -34,7 +34,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.1.1"
+        kotlinCompilerExtensionVersion = "1.3.1"
     }
 }
 
@@ -49,6 +49,9 @@ dependencies {
     implementation("androidx.compose.material:material:$composeUiVersion")
     debugImplementation("androidx.compose.ui:ui-tooling:$composeUiVersion")
     debugImplementation("androidx.compose.ui:ui-test-manifest:$composeUiVersion")
+
+    api("me.onebone:toolbar-compose:2.3.5")
+    implementation("com.jakewharton.timber:timber:5.0.1")
 
     implementation(project(":entities"))
 }

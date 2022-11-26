@@ -28,7 +28,16 @@ data class CustomColors(
 
 @Immutable
 data class CustomTypography(
-    val h1: TextStyle = TextStyle.Default,
+    val digitL: TextStyle = TextStyle.Default,
+    val digitM: TextStyle = TextStyle.Default,
+    val digitS: TextStyle = TextStyle.Default,
+    val heading1: TextStyle = TextStyle.Default,
+    val heading2: TextStyle = TextStyle.Default,
+    val heading3: TextStyle = TextStyle.Default,
+    val heading4: TextStyle = TextStyle.Default,
+    val body1: TextStyle = TextStyle.Default,
+    val body2: TextStyle = TextStyle.Default,
+    val body3: TextStyle = TextStyle.Default,
 )
 
 val LocalCustomColors = staticCompositionLocalOf { CustomColors() }
@@ -43,12 +52,16 @@ object CustomTheme {
 fun CustomTheme(
     colors: CustomColors,
     type: CustomTypography,
+    darkTheme: Boolean,
     content: @Composable () -> Unit
 ) {
     CompositionLocalProvider(
         LocalCustomColors provides colors,
         LocalCustomTypography provides type,
     ) {
-        MaterialTheme(content = content)
+        MaterialTheme(
+            colors = if (darkTheme) darkColors() else lightColors(),
+            content = content,
+        )
     }
 }

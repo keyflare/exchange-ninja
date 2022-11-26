@@ -273,6 +273,12 @@ enum class Currency(
     ZMK(ticker = "ZMK", displayName = "Zambian kwacha", type = FIAT),
     ZMW(ticker = "ZMW", displayName = "Zambian Kwacha", type = FIAT),
     ZWL(ticker = "ZWL", displayName = "Zimbabwean Dollar", type = FIAT),
+    ;
+
+    companion object {
+        val all get(): List<Currency> =
+            values().toMutableList().apply { remove(UNKNOWN) }
+    }
 
     // Blacklist
 //    XDR(ticker = "XDR", displayName = "Special Drawing Rights", type = CRYPTO),

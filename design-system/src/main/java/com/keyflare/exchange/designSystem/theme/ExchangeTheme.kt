@@ -10,7 +10,8 @@ fun ExchangeTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composab
 
     CustomTheme(
         colors = colors,
-        type = type,
-        content = content
+        type = Type,
+        darkTheme = darkTheme,
+        content = content,
     )
 }

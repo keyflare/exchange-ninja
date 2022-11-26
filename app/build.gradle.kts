@@ -1,6 +1,7 @@
+@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    id("com.android.application")
-    kotlin("android")
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.android.application)
 }
 
 android {
@@ -39,7 +40,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.3.1"
+        kotlinCompilerExtensionVersion = libs.versions.compose.get()
     }
     packagingOptions {
         resources {
@@ -48,22 +49,13 @@ android {
     }
 }
 
-// TODO use version catalog
 dependencies {
-    implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.5.1")
-    implementation("androidx.activity:activity-compose:1.6.1")
+    implementation(libs.bundles.androidx)
+    implementation(libs.bundles.compose)
+    debugImplementation(libs.bundles.compose.debug)
+    implementation(libs.timber)
 
-    val composeUiVersion = "1.3.1"
-    implementation("androidx.compose.ui:ui:$composeUiVersion")
-    implementation("androidx.compose.ui:ui-tooling-preview:$composeUiVersion")
-    implementation("androidx.compose.material:material:$composeUiVersion")
-    debugImplementation("androidx.compose.ui:ui-tooling:$composeUiVersion")
-    debugImplementation("androidx.compose.ui:ui-test-manifest:$composeUiVersion")
-
-    implementation("com.jakewharton.timber:timber:5.0.1")
-
-    implementation(project(":design-system"))
-    implementation(project(":currency-rates"))
-    implementation(project(":currency-chooser"))
+    implementation(projects.designSystem)
+    implementation(projects.currencyChooser)
+    implementation(projects.currencyRates)
 }

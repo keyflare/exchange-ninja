@@ -1,6 +1,7 @@
+@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.android")
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.android.library)
 }
 
 android {
@@ -34,24 +35,15 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.3.1"
+        kotlinCompilerExtensionVersion = libs.versions.compose.get()
     }
 }
 
 dependencies {
-    implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.appcompat:appcompat:1.5.1")
-    implementation("com.google.android.material:material:1.7.0")
+    implementation(libs.bundles.compose)
+    debugImplementation(libs.bundles.compose.debug)
+    implementation(libs.timber)
+    api(libs.collapaing.toolbar)
 
-    val composeUiVersion = "1.3.1"
-    implementation("androidx.compose.ui:ui:$composeUiVersion")
-    implementation("androidx.compose.ui:ui-tooling-preview:$composeUiVersion")
-    implementation("androidx.compose.material:material:$composeUiVersion")
-    debugImplementation("androidx.compose.ui:ui-tooling:$composeUiVersion")
-    debugImplementation("androidx.compose.ui:ui-test-manifest:$composeUiVersion")
-
-    api("me.onebone:toolbar-compose:2.3.5")
-    implementation("com.jakewharton.timber:timber:5.0.1")
-
-    implementation(project(":entities"))
+    implementation(projects.entities)
 }

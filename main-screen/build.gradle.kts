@@ -1,11 +1,11 @@
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    alias(libs.plugins.kotlin.android)
     alias(libs.plugins.android.library)
+    alias(libs.plugins.kotlin.android)
 }
 
 android {
-    namespace = "com.keyflare.exchange.currencyChooser"
+    namespace = "com.keyflare.exchange.mainScreen"
     compileSdk = 33
 
     defaultConfig {
@@ -50,4 +50,7 @@ dependencies {
 
     implementation(projects.entities)
     implementation(projects.designSystem)
+    implementation(projects.currencyRates)
+    implementation(projects.redux)
+    api(projects.navigation)
 }

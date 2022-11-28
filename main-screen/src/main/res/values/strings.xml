@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_converter">Currency converter</string>
+    <string name="title_exchange">Complex Exchange</string>
+    <string name="title_widgets">Widgets</string>
+
+    <string name="description_converter">More than 270 currencies including cryptocurrencies</string>
+    <string name="description_exchange">Final exchange rate for single or multiple transactions</string>
+    <string name="description_widgets">Useful and informative widgets for your home screen</string>
+
+    <string name="header_latest_exchanges">Latest exchanges</string>
+    <string name="button_history">History</string>
+</resources>

@@ -18,7 +18,7 @@ internal class ReduxNavigatorImpl : ReduxNavigator {
     override fun <P : NavigationParams> push(
         backstack: BackstackId,
         destination: NavigationEntryId<P>,
-        params: P
+        params: P,
     ) {
         store.dispatch(
             NavigationPushAction(

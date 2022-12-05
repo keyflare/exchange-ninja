@@ -23,6 +23,7 @@ androidx-lifecycle = { module = "androidx.activity:activity-compose", version.re
 compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }
 compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
 compose-material = { module = "androidx.compose.material:material", version.ref = "compose" }
+compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "compose" }
 compose-ui-tooling-debug = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose"}
 
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
@@ -35,7 +36,7 @@ collapaing-toolbar = { module = "me.onebone:toolbar-compose", version.ref = "col
 
 [bundles]
 
-compose = [ "compose-ui", "compose-ui-tooling-preview", "compose-material" ]
+compose = [ "compose-ui", "compose-ui-tooling-preview", "compose-material", "compose-foundation" ]
 compose-debug = [ "compose-ui-tooling-debug" ]
 androidx = [ "androidx-core", "androidx-activity-compose", "androidx-lifecycle" ]
 ktor = [ "ktor-core", "ktor-android", "ktor-serialization" ]

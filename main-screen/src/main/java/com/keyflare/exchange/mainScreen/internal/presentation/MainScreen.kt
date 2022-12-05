@@ -49,6 +49,7 @@ private fun MainScreenUi(
         modifier = Modifier
             .fillMaxSize()
             .background(color = CustomTheme.colors.background)
+            .systemBarsPadding()
             .padding(horizontal = 16.dp, vertical = 8.dp)
             .verticalScroll(scrollState)
     ) {

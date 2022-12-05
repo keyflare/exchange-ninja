@@ -52,5 +52,6 @@ dependencies {
     implementation(projects.designSystem)
     implementation(projects.currencyRates)
     implementation(projects.redux)
-    api(projects.navigation)
+    implementation(projects.navigation)
+    implementation(projects.common)
 }

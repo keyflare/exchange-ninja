@@ -58,4 +58,8 @@ dependencies {
     implementation(projects.designSystem)
     implementation(projects.currencyChooser)
     implementation(projects.currencyRates)
+    implementation(projects.navigation)
+    implementation(projects.mainScreen)
+    implementation(projects.common)
+    implementation(projects.redux)
 }

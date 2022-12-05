@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.keyflare.exchange.designSystem"
+    namespace = "com.keyflare.exchange.navigation.internal"
     compileSdk = 33
 
     defaultConfig {
@@ -46,8 +46,4 @@ android {
 dependencies {
     implementation(libs.bundles.compose)
     debugImplementation(libs.bundles.compose.debug)
-    implementation(libs.timber)
-    api(libs.collapaing.toolbar)
-
-    implementation(projects.entities)
 }

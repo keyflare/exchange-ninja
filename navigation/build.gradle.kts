@@ -33,8 +33,22 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    buildFeatures {
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = libs.versions.compose.get()
+    }
 }
 
 dependencies {
-    api(projects.redux)
+    implementation(libs.bundles.compose)
+    debugImplementation(libs.bundles.compose.debug)
+
+    api(projects.navigation.core)
+    implementation(projects.navigation.internal)
+    implementation(projects.redux)
+    implementation(projects.common)
 }

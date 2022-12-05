@@ -19,18 +19,19 @@ import com.keyflare.exchange.designSystem.icons.getIcon
 import com.keyflare.exchange.designSystem.theme.ExchangeTheme
 import com.keyflare.exchange.entities.Currency
 import com.keyflare.exchange.mainScreen.R
+import com.keyflare.exchange.mainScreen.internal.domain.MainScreenState
 
 @Composable
-internal fun MainScreen(state: MainScreenViewState) {
+internal fun MainScreen(state: MainScreenState) {
 
-//    MainScreenUi(
-//        state = {},
-//        onRatesClick = {},
-//        onSettingsClick = {},
-//        onConverterClick = {},
-//        onExchangeClick = {},
-//        onHistoryClick = {},
-//    )
+    MainScreenUi(
+        state = state.toViewState(),
+        onRatesClick = {},
+        onSettingsClick = {},
+        onConverterClick = {},
+        onExchangeClick = {},
+        onHistoryClick = {},
+    )
 }
 
 @Composable

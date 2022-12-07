@@ -11,24 +11,58 @@ internal data class MainScreenViewState(
 )
 
 @Immutable
-internal data class MainScreenRatesViewState(
-    val icon1: ImageVector,
-    val icon2: ImageVector,
-    val icon3: ImageVector,
-    val value1: String,
-    val value2: String,
-    val value3: String,
-)
+internal sealed interface MainScreenRatesViewState {
+
+    @Immutable
+    data class Bar(
+        val items: List<RateItem>,
+    ) : MainScreenRatesViewState {
+
+        @Immutable
+        data class RateItem(
+            val icon: ImageVector,
+            val rate: String,
+        )
+    }
+
+    @Immutable
+    data class Settings(
+        val currencies: List<CurrencyItem>,
+        val baseCurrency: CurrencyItem,
+    ) : MainScreenRatesViewState {
+
+        @Immutable
+        data class CurrencyItem(
+            val ticker: String,
+            val icon: ImageVector,
+        )
+    }
+}
 
 internal fun MainScreenState.toViewState() = MainScreenViewState(
-    rates = MainScreenRatesViewState(
-        icon1 = ratesState.currency1.getIcon(),
-        icon2 = ratesState.currency2.getIcon(),
-        icon3 = ratesState.currency3.getIcon(),
-        value1 = ratesState.rate1.toPrettyString(),
-        value2 = ratesState.rate2.toPrettyString(),
-        value3 = ratesState.rate3.toPrettyString(),
-    ),
+    rates = if (ratesState.settingsMode) {
+        MainScreenRatesViewState.Settings(
+            currencies = ratesState.rates.map { rate ->
+                MainScreenRatesViewState.Settings.CurrencyItem(
+                    ticker = rate.currency.ticker,
+                    icon = rate.currency.getIcon(),
+                )
+            },
+            baseCurrency = MainScreenRatesViewState.Settings.CurrencyItem(
+                ticker = ratesState.baseCurrency.ticker,
+                icon = ratesState.baseCurrency.getIcon(),
+            )
+        )
+    } else {
+        MainScreenRatesViewState.Bar(
+            items = ratesState.rates.map { rate ->
+                MainScreenRatesViewState.Bar.RateItem(
+                    icon = rate.currency.getIcon(),
+                    rate = rate.rate.toPrettyString(),
+                )
+            }
+        )
+    },
 )
 
 private fun Float.toPrettyString(): String {

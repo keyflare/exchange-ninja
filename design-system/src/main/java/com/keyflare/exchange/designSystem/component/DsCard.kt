@@ -13,6 +13,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.dp
 import com.keyflare.exchange.designSystem.common.CustomTheme
+import com.keyflare.exchange.designSystem.common.addIf
 import com.keyflare.exchange.designSystem.common.trueShadow
 import com.keyflare.exchange.designSystem.theme.ExchangeTheme
 
@@ -35,10 +36,12 @@ fun DsCard(
             )
             .clip(shape = shape)
             .background(color = CustomTheme.colors.surface)
-            .clickable(
-                enabled = onClick != null,
-                onClick = { onClick?.invoke() }
-            ),
+            .addIf(onClick != null) {
+                clickable(
+                    enabled = onClick != null,
+                    onClick = { onClick?.invoke() }
+                )
+            },
         content = content,
     )
 }

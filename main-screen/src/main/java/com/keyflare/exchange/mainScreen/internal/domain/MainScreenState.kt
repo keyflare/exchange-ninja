@@ -17,12 +17,21 @@ internal data class MainScreenState(
         val initial: MainScreenState = MainScreenState(
             ratesState = MainScreenRatesState(
                 baseCurrency = Currency.RUB,
-                currency1 = Currency.USD,
-                currency2 = Currency.EUR,
-                currency3 = Currency.TRY,
-                rate1 = 0f,
-                rate2 = 0f,
-                rate3 = 0f,
+                rates = listOf(
+                    MainScreenRatesState.CurrencyRateState(
+                        currency = Currency.USD,
+                        rate = 0f,
+                    ),
+                    MainScreenRatesState.CurrencyRateState(
+                        currency = Currency.EUR,
+                        rate = 0f,
+                    ),
+                    MainScreenRatesState.CurrencyRateState(
+                        currency = Currency.TRY,
+                        rate = 0f,
+                    )
+                ),
+                settingsMode = true,
             ),
             latestExchanges = Unit,
         )
@@ -31,10 +40,11 @@ internal data class MainScreenState(
 
 internal data class MainScreenRatesState(
     val baseCurrency: Currency,
-    val currency1: Currency,
-    val currency2: Currency,
-    val currency3: Currency,
-    val rate1: Float,
-    val rate2: Float,
-    val rate3: Float,
-)
+    val rates: List<CurrencyRateState>,
+    val settingsMode: Boolean,
+) {
+    data class CurrencyRateState(
+        val currency: Currency,
+        val rate: Float,
+    )
+}

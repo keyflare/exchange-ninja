@@ -24,6 +24,7 @@ data class CustomColors(
     val iconsSecondary: Color = Color.White,
     val iconsAction: Color = Color.White,
     val divider: Color = Color.White,
+    val tint: Color = Color.White,
 )
 
 @Immutable

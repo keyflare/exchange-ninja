@@ -10,4 +10,7 @@
 
     <string name="header_latest_exchanges">Latest exchanges</string>
     <string name="button_history">History</string>
+
+    <string name="title_rates_settings">Select currencies to follow rates</string>
+    <string name="title_base_currency">Base currency</string>
 </resources>

@@ -23,6 +23,8 @@ private val colorActionDark = Color(0xFF3D7EFF)
 private val colorAccent = Color(0xFFFEA00A)
 private val colorInteractionLight = Color(0xFF979EA7)
 private val colorInteractionDark = Color(0xFF8B929B)
+private val colorBlackAlpha80 = Color(0xCC000000)
+private val colorBlackAlpha60 = Color(0x99000000)
 private val colorWhiteAlfa10 = Color(0x1AFFFFFF)
 private val colorBlackAlfa7 = Color(0x12000000)
 
@@ -44,6 +46,7 @@ internal val LightColors = CustomColors(
     iconsSecondary = colorAbsoluteWhite,
     iconsAction = colorActionLight,
     divider = colorBlackAlfa7,
+    tint = colorBlackAlpha60
 )
 
 internal val DarkColors = CustomColors(
@@ -64,4 +67,5 @@ internal val DarkColors = CustomColors(
     iconsSecondary = colorAbsoluteWhite,
     iconsAction = colorActionDark,
     divider = colorWhiteAlfa10,
+    tint = colorBlackAlpha80,
 )

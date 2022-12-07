@@ -44,6 +44,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.activity.compose)
     implementation(libs.bundles.compose)
     debugImplementation(libs.bundles.compose.debug)
     implementation(libs.timber)

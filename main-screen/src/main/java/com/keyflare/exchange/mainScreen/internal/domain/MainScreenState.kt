@@ -31,7 +31,7 @@ internal data class MainScreenState(
                         rate = 0f,
                     )
                 ),
-                settingsMode = true,
+                settingsMode = false,
             ),
             latestExchanges = Unit,
         )

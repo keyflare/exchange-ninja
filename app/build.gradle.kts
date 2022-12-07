@@ -54,6 +54,7 @@ dependencies {
     implementation(libs.bundles.compose)
     debugImplementation(libs.bundles.compose.debug)
     implementation(libs.timber)
+    implementation(libs.accompanist.systemUiController)
 
     implementation(projects.designSystem)
     implementation(projects.currencyChooser)

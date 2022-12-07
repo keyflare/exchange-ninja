@@ -3,14 +3,13 @@ package com.keyflare.exchange.platform
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.SideEffect
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.core.view.WindowCompat
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.keyflare.exchange.common.extensions.cast
 import com.keyflare.exchange.designSystem.theme.ExchangeTheme
 import com.keyflare.exchange.mainScreen.api.mainScreenId
@@ -29,6 +28,17 @@ class MainActivity : ComponentActivity() {
         setContent {
             ExchangeTheme {
                 val appState by deps.store.states.collectAsState()
+
+                val systemUiController = rememberSystemUiController()
+                val useDarkIcons = !isSystemInDarkTheme()
+
+                DisposableEffect(systemUiController, useDarkIcons) {
+                    systemUiController.setSystemBarsColor(
+                        color = Color.Transparent,
+                        darkIcons = useDarkIcons
+                    )
+                    onDispose {}
+                }
 
                 NavigationApi.InitNavigationWith(
                     navigator = deps.navigator,

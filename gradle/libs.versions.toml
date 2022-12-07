@@ -11,6 +11,7 @@ androidx-lifecycle = "2.5.1"
 timber = "5.0.1"
 ktor = "1.6.7"
 collapaing-toolbar = "2.3.5"
+accompanist-systemUiController = "0.28.0"
 
 [libraries]
 
@@ -25,6 +26,8 @@ compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview"
 compose-material = { module = "androidx.compose.material:material", version.ref = "compose" }
 compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "compose" }
 compose-ui-tooling-debug = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
+
+accompanist-systemUiController = { module = "com.google.accompanist:accompanist-systemuicontroller", version.ref = "accompanist-systemUiController"}
 
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
 
